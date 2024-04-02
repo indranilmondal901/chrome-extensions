@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Organiser",
+  "version": "1.0",
+  "permissions": [
+    "storage","activeTab","contextMenus"
+  ],
+  "action": {
+    "default_title": "Organizer",
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "Organiser.png",
+      "128": "Organiser.png"
+    }
+  }
+}
