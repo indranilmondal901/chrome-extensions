@@ -1,0 +1,18 @@
+body {
+  background-color: "#f1f5f9";
+}
+
+.wrapper {
+  width: 300px;
+  text-align: center;
+}
+
+.changeColorBtn {
+    width: 200px;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+    background-color: rgb(172, 226, 223);
+    cursor: pointer;
+}
