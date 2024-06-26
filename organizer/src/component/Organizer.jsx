@@ -1,4 +1,5 @@
-// import React, { useState } from "react";
+// /* global chrome */
+// import React, { useEffect, useState } from "react";
 // import { Box, Chip, Stack, IconButton, Typography } from "@mui/material";
 // import DeleteIcon from "@mui/icons-material/Delete";
 // import DoDisturbOnRoundedIcon from "@mui/icons-material/DoDisturbOnRounded";
@@ -71,6 +72,9 @@
 //   const AddData = () => {
 //     if (dataValue) {
 //       setData((prev) => [...prev, { ...dataValue, id: data.length }]);
+//       chrome.storage.local.set({
+//         data: [...data, { ...dataValue, id: data.length }],
+//       });
 //     }
 //     setDataValue({
 //       id: "",
@@ -79,6 +83,17 @@
 //     });
 //     setDataForm(false);
 //   };
+
+//   useEffect(() => {
+//     chrome.storage.local.set({ data: data });
+//   }, [data]);
+//   useEffect(() => {
+//     chrome.storage.local.get("tabs", (result) => {
+//       if (result.tabs) {
+//         setData(result.tabs);
+//       }
+//     });
+//   }, []);
 
 //   const handleClick = (url) => {
 //     window.open(url);
@@ -147,7 +162,7 @@
 //           Unorganized Section
 //         </Typography>
 //         <Stack
-//            direction="row"
+//           direction="row"
 //           spacing={1}
 //           sx={{ width: "500px", p: "2rem", m: "1rem", overflow: "auto" }}
 //         >
@@ -250,7 +265,6 @@ const Organizer = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // Load tab data from Chrome storage when component mounts
     chrome.storage.local.get("tabs", (result) => {
       if (result.tabs) {
         setData(result.tabs);
